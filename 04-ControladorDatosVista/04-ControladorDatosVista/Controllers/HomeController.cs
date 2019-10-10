@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _04_ControladorDatosVista.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -23,7 +24,15 @@ namespace _04_ControladorDatosVista.Controllers
             {
                 ViewData["saludo"] = "Buenas noches";
             }
-            return View();
+
+            clsPersona oPersona = new clsPersona();
+            oPersona.Nombre = "Rafael";
+            oPersona.PrimerApellido = "Manzano";
+            oPersona.SegundoApellido = "Medina";
+            oPersona.FechaNacimiento = new DateTime(1995,06,23);
+
+            ViewBag.dia = DateTime.Now.ToLocalTime().ToString();
+            return View(oPersona);
         }
     }
 }

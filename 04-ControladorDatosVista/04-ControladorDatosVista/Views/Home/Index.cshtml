@@ -1,4 +1,5 @@
-﻿
+﻿@model _04_ControladorDatosVista.Models.clsPersona
+
 @{
     ViewBag.Title = "Index";
 }
@@ -6,4 +7,13 @@
 <h2>Index</h2>
 
 @ViewData["saludo"]
+<br />
 
+@ViewBag.dia
+
+<p>
+    La persona introducida desde controlador es <br />
+    Nombre: @Model.Nombre <br />
+    Apellidos: @Model.PrimerApellido  @Model.SegundoApellido <br />
+    Fecha de Nacimiento: @Model.FechaNacimiento
+</p>

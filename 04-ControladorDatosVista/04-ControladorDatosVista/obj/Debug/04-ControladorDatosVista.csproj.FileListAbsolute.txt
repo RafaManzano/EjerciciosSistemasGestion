@@ -73,3 +73,32 @@ D:\Github\EjerciciosSistemasGestion\04-ControladorDatosVista\04-ControladorDatos
 D:\Github\EjerciciosSistemasGestion\04-ControladorDatosVista\04-ControladorDatosVista\obj\Debug\04-ControladorDatosVista.csproj.CopyComplete
 D:\Github\EjerciciosSistemasGestion\04-ControladorDatosVista\04-ControladorDatosVista\obj\Debug\04-ControladorDatosVista.dll
 D:\Github\EjerciciosSistemasGestion\04-ControladorDatosVista\04-ControladorDatosVista\obj\Debug\04-ControladorDatosVista.pdb
+C:\Users\Rafael Manzano\Documents\GitHub\EjerciciosSistemasGestion\04-ControladorDatosVista\04-ControladorDatosVista\bin\04-ControladorDatosVista.dll.config
+C:\Users\Rafael Manzano\Documents\GitHub\EjerciciosSistemasGestion\04-ControladorDatosVista\04-ControladorDatosVista\bin\04-ControladorDatosVista.dll
+C:\Users\Rafael Manzano\Documents\GitHub\EjerciciosSistemasGestion\04-ControladorDatosVista\04-ControladorDatosVista\bin\04-ControladorDatosVista.pdb
+C:\Users\Rafael Manzano\Documents\GitHub\EjerciciosSistemasGestion\04-ControladorDatosVista\04-ControladorDatosVista\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Rafael Manzano\Documents\GitHub\EjerciciosSistemasGestion\04-ControladorDatosVista\04-ControladorDatosVista\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Rafael Manzano\Documents\GitHub\EjerciciosSistemasGestion\04-ControladorDatosVista\04-ControladorDatosVista\bin\System.Web.Helpers.dll
+C:\Users\Rafael Manzano\Documents\GitHub\EjerciciosSistemasGestion\04-ControladorDatosVista\04-ControladorDatosVista\bin\System.Web.Mvc.dll
+C:\Users\Rafael Manzano\Documents\GitHub\EjerciciosSistemasGestion\04-ControladorDatosVista\04-ControladorDatosVista\bin\System.Web.Razor.dll
+C:\Users\Rafael Manzano\Documents\GitHub\EjerciciosSistemasGestion\04-ControladorDatosVista\04-ControladorDatosVista\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Rafael Manzano\Documents\GitHub\EjerciciosSistemasGestion\04-ControladorDatosVista\04-ControladorDatosVista\bin\System.Web.Webpages.dll
+C:\Users\Rafael Manzano\Documents\GitHub\EjerciciosSistemasGestion\04-ControladorDatosVista\04-ControladorDatosVista\bin\System.Web.Webpages.Razor.dll
+C:\Users\Rafael Manzano\Documents\GitHub\EjerciciosSistemasGestion\04-ControladorDatosVista\04-ControladorDatosVista\bin\System.Web.Razor.xml
+C:\Users\Rafael Manzano\Documents\GitHub\EjerciciosSistemasGestion\04-ControladorDatosVista\04-ControladorDatosVista\bin\System.Web.Webpages.xml
+C:\Users\Rafael Manzano\Documents\GitHub\EjerciciosSistemasGestion\04-ControladorDatosVista\04-ControladorDatosVista\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Rafael Manzano\Documents\GitHub\EjerciciosSistemasGestion\04-ControladorDatosVista\04-ControladorDatosVista\bin\System.Web.Webpages.Razor.xml
+C:\Users\Rafael Manzano\Documents\GitHub\EjerciciosSistemasGestion\04-ControladorDatosVista\04-ControladorDatosVista\bin\System.Web.Helpers.xml
+C:\Users\Rafael Manzano\Documents\GitHub\EjerciciosSistemasGestion\04-ControladorDatosVista\04-ControladorDatosVista\bin\System.Web.Mvc.xml
+C:\Users\Rafael Manzano\Documents\GitHub\EjerciciosSistemasGestion\04-ControladorDatosVista\04-ControladorDatosVista\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Rafael Manzano\Documents\GitHub\EjerciciosSistemasGestion\04-ControladorDatosVista\04-ControladorDatosVista\bin\es\System.Web.Razor.resources.dll
+C:\Users\Rafael Manzano\Documents\GitHub\EjerciciosSistemasGestion\04-ControladorDatosVista\04-ControladorDatosVista\bin\es\System.Web.Webpages.resources.dll
+C:\Users\Rafael Manzano\Documents\GitHub\EjerciciosSistemasGestion\04-ControladorDatosVista\04-ControladorDatosVista\bin\es\System.Web.Webpages.Deployment.resources.dll
+C:\Users\Rafael Manzano\Documents\GitHub\EjerciciosSistemasGestion\04-ControladorDatosVista\04-ControladorDatosVista\bin\es\System.Web.Webpages.Razor.resources.dll
+C:\Users\Rafael Manzano\Documents\GitHub\EjerciciosSistemasGestion\04-ControladorDatosVista\04-ControladorDatosVista\bin\es\System.Web.Helpers.resources.dll
+C:\Users\Rafael Manzano\Documents\GitHub\EjerciciosSistemasGestion\04-ControladorDatosVista\04-ControladorDatosVista\bin\es\System.Web.Mvc.resources.dll
+C:\Users\Rafael Manzano\Documents\GitHub\EjerciciosSistemasGestion\04-ControladorDatosVista\04-ControladorDatosVista\obj\Debug\04-ControladorDatosVista.csprojAssemblyReference.cache
+C:\Users\Rafael Manzano\Documents\GitHub\EjerciciosSistemasGestion\04-ControladorDatosVista\04-ControladorDatosVista\obj\Debug\04-ControladorDatosVista.csproj.CoreCompileInputs.cache
+C:\Users\Rafael Manzano\Documents\GitHub\EjerciciosSistemasGestion\04-ControladorDatosVista\04-ControladorDatosVista\obj\Debug\04-ControladorDatosVista.csproj.CopyComplete
+C:\Users\Rafael Manzano\Documents\GitHub\EjerciciosSistemasGestion\04-ControladorDatosVista\04-ControladorDatosVista\obj\Debug\04-ControladorDatosVista.dll
+C:\Users\Rafael Manzano\Documents\GitHub\EjerciciosSistemasGestion\04-ControladorDatosVista\04-ControladorDatosVista\obj\Debug\04-ControladorDatosVista.pdb
