@@ -1,0 +1,30 @@
+﻿
+@{
+    /**/
+
+    ViewBag.Title = "listado";
+}
+
+@model List<_05_ControladorDatosVista.Models.clsPersona>
+<h2>listado</h2>
+<table border="1">
+    <tr>
+        <th>Nombre</th>
+        <th>Primer Apellido</th>
+        <th>Segundo Apellido</th>
+        <th>Fecha</th>
+    </tr>
+
+    @foreach (var persona in Model)
+    {
+        <tr>
+            <td>@persona.Nombre</td>
+            <td>@persona.PrimerApellido</td>
+            <td>@persona.SegundoApellido</td>
+            <td>@persona.FechaNacimiento</td>
+        </tr>
+    }
+</table>
+
+@Html.ActionLink("Regresar", "Index")
+
