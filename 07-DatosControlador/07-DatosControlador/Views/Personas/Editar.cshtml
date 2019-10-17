@@ -1,0 +1,27 @@
+﻿
+@model _07_DatosAControlador.Models.clsPersona
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Editar</title>
+</head>
+<body>
+    <div>
+        <h2>Editar</h2>
+
+        <form method="post">
+            <input type="text" name="nombre" value="@Model.Nombre" />
+            @Html.TextBox("primerApellido", Model.PrimerApellido)
+            @Html.TextBoxFor(sa => Model.SegundoApellido)
+            @Html.TextBoxFor(fe => Model.FechaNacimiento)
+            <input type="submit" value="Enviar" />
+        </form>
+    </div>
+</body>
+</html>
