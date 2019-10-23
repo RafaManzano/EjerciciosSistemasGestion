@@ -1,4 +1,5 @@
-﻿@model _08_ExamenSorpresa.Models.clsPersonaDepartamento
+﻿@model _08_ExamenSorpresa.Models.clsPersonaConListadoDepartamentos
+@*@model _08_ExamenSorpresa.Models.clsPersonaConTodoDepartamento*@
 
 @{
     Layout = null;
@@ -32,9 +33,8 @@
         @*</select>*@
             @*</asp:DropDownList>*@
 
-            @Html.DropDownListFor(m => "Departamentos",
-            new SelectList(Model.Departamentos.ForEach(x => x.Nombre)),
-             "Selecciona Departamento")
+            @Html.DropDownList("dpto", new SelectList(Model.Departamentos, "Nombre", "Nombre")) 
+
             <input type="submit" value="Enviar" />
         </form>
     </div>

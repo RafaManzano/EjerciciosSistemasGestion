@@ -43,6 +43,6 @@ namespace _08_ExamenSorpresa.Models
         public string PrimerApellido { get; set; }
         public string SegundoApellido { get; set; }
         public DateTime FechaNacimiento { get; set; }
-        public string Departamento { get; set; }
+        public int IdDepartamento { get; set; }
     }
 }
