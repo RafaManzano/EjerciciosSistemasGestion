@@ -1,0 +1,42 @@
+﻿@model _08_ExamenSorpresa.Models.clsPersonaDepartamento
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Editar</title>
+</head>
+<body>
+    <div>
+        <h2>Editar</h2>
+
+        <form method="post">
+            @Html.TextBoxFor(no => Model.Persona.Nombre)
+            @Html.TextBoxFor(pa => Model.Persona.PrimerApellido)
+            @Html.TextBoxFor(sa => Model.Persona.SegundoApellido)
+            @Html.TextBoxFor(fe => Model.Persona.FechaNacimiento)
+
+            @*<select name="dpto">*@
+            @*<asp:DropDownList>
+        @foreach (var x in Model.Departamentos)
+        {
+            <asp:ListItem Value="@x.Nombre"> @x.Nombre </asp:ListItem>
+            //<option value="@x.Nombre">@x.Nombre</option>
+
+        }
+        @*</select>*@
+            @*</asp:DropDownList>*@
+
+            @Html.DropDownListFor(m => "Departamentos",
+            new SelectList(Model.Departamentos.ForEach(x => x.Nombre)),
+             "Selecciona Departamento")
+            <input type="submit" value="Enviar" />
+        </form>
+    </div>
+</body>
+</html>
