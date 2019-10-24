@@ -17,10 +17,10 @@
         <h2>Editar</h2>
 
         <form method="post">
-            @Html.TextBoxFor(no => Model.Persona.Nombre)
-            @Html.TextBoxFor(pa => Model.Persona.PrimerApellido)
-            @Html.TextBoxFor(sa => Model.Persona.SegundoApellido)
-            @Html.TextBoxFor(fe => Model.Persona.FechaNacimiento)
+            @Html.TextBoxFor(no => Model.Nombre)
+            @Html.TextBoxFor(pa => Model.PrimerApellido)
+            @Html.TextBoxFor(sa => Model.SegundoApellido)
+            @Html.TextBoxFor(fe => Model.FechaNacimiento)
 
             @*<select name="dpto">*@
             @*<asp:DropDownList>
@@ -33,7 +33,7 @@
         @*</select>*@
             @*</asp:DropDownList>*@
 
-            @Html.DropDownListFor(m => m.Persona.IdDepartamento, new SelectList(Model.Departamentos, "Id", "Nombre", Model.Persona.IdDepartamento)) 
+            @Html.DropDownListFor(m => m.IdDepartamento, new SelectList(Model.Departamentos, "Id", "Nombre", Model.IdDepartamento)) 
 
             <input type="submit" value="Enviar" />
         </form>

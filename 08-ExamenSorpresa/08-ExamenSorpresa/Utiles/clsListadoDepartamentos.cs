@@ -21,7 +21,7 @@ namespace _08_ExamenSorpresa.Utiles
         public String buscarNombrePorID(int id)
         {
             List<clsDepartamento> departamentos = listadoDepartamentos();
-            departamentos.Find(m => (m.ID, id) ? m.Nombre : "no encontrado"));
+            return departamentos.Find(x => x.ID == id).Nombre;
         }
     }
 }
