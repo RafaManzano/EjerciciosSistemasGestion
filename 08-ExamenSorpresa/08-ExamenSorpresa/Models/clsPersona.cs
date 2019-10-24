@@ -14,12 +14,13 @@ namespace _08_ExamenSorpresa.Models
         //private string segundoApellido;
         //private DateTime fechaNacimiento;
 
-        public clsPersona(String nombre, String primerApellido, String segundoApellido, DateTime fecha)
+        public clsPersona(String nombre, String primerApellido, String segundoApellido, DateTime fecha, int IdDepartamento)
         {
             this.nombre = nombre;
             this.PrimerApellido = primerApellido;
             this.SegundoApellido = segundoApellido;
             this.FechaNacimiento = fecha;
+            this.IdDepartamento = IdDepartamento;
         }
 
         public clsPersona()

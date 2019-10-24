@@ -33,7 +33,7 @@
         @*</select>*@
             @*</asp:DropDownList>*@
 
-            @Html.DropDownList("dpto", new SelectList(Model.Departamentos, "Nombre", "Nombre")) 
+            @Html.DropDownListFor(m => m.Persona.IdDepartamento, new SelectList(Model.Departamentos, "Id", "Nombre", Model.Persona.IdDepartamento)) 
 
             <input type="submit" value="Enviar" />
         </form>

@@ -5,9 +5,8 @@ using System.Web;
 
 namespace _08_ExamenSorpresa.Models
 {
-    public class clsPersonaConListadoDepartamentos
+    public class clsPersonaConListadoDepartamentos : clsPersona
     {
-        public clsPersona Persona { get; set; }
         public List<clsDepartamento> Departamentos{ get; set; }
     }
 }

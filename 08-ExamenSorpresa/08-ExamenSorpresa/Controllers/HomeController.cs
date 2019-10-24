@@ -13,21 +13,17 @@ namespace _08_ExamenSorpresa.Controllers
         public ActionResult Index()
         {
             List<clsDepartamento> departamentos = new List<clsDepartamento>();
-            departamentos.Add(new clsDepartamento(1, "INFORMATICA"));
-            departamentos.Add(new clsDepartamento(2, "FINANZAS"));
-            departamentos.Add(new clsDepartamento(3, "CONTABILIDAD"));
-            departamentos.Add(new clsDepartamento(4, "VENTAS"));
-
+            
             clsPersonaConListadoDepartamentos personaConDepartamento = new clsPersonaConListadoDepartamentos();
-            personaConDepartamento.Persona = new clsPersona("Rafael", "Manzano", "Medina", DateTime.Now);
+            personaConDepartamento.Persona = new clsPersona("Rafael", "Manzano", "Medina", DateTime.Now,4);
             personaConDepartamento.Departamentos = departamentos;
             return View(personaConDepartamento);
         }
 
         [HttpPost]
-        public ActionResult Index(clsPersonaNombreDepartamento persona, string dpto)
+        public ActionResult Index(clsPersonaNombreDepartamento persona)
         {
-            persona.nombreDepartamento = dpto;
+           // persona.nombreDepartamento = dpto;
             return View("PersonaModificada", persona);
         }
     }
