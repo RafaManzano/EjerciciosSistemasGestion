@@ -1,0 +1,21 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        @ViewBag.texto <br />
+        @Html.ActionLink("Ir a la vista de nuevo", "Index", "Home", new { esMiPrimeraVez = true }, null)
+
+
+    </div>
+</body>
+</html>
