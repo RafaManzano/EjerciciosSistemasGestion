@@ -1,0 +1,28 @@
+﻿@model _10_DataAnnotations.Models.clsPersona
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <form method="post">
+            <input type="text" name="nombre" value="@Model.Nombre" /> @Html.ValidationMessageFor(model => model.Nombre)
+            @Html.TextBox("primerApellido", Model.PrimerApellido) @Html.ValidationMessageFor(model => model.PrimerApellido)
+            @Html.TextBoxFor(sa => Model.SegundoApellido) @Html.ValidationMessageFor(model => model.SegundoApellido)
+            @Html.TextBoxFor(fe => Model.FechaNacimiento, "{0:yyyy/MM/dd}") @Html.ValidationMessageFor(model => model.FechaNacimiento)
+            @Html.TextBoxFor(di => Model.Direccion) @Html.ValidationMessageFor(model => model.Direccion)
+            @Html.TextBoxFor(te => Model.Telefono) @Html.ValidationMessageFor(model => model.Telefono)
+            @Html.HiddenFor(model => model.ID) @Html.ValidationMessageFor(model => model.ID)
+            <input type="submit" value="Enviar" />
+            @Html.ValidationSummary()
+        </form>
+    </div>
+</body>
+</html>
