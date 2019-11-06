@@ -1,0 +1,51 @@
+﻿@model IEnumerable<_11_ADOConexionBBDD.Models.clsPersona>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NombrePersona)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ApellidosPersona)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaNacimiento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IDDepartamento)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NombrePersona)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ApellidosPersona)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaNacimiento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDDepartamento)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IDPersona }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IDPersona }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IDPersona })
+        </td>
+    </tr>
+}
+
+</table>
