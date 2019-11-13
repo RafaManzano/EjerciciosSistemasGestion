@@ -42,11 +42,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connection\clsMyConnection.cs" />
+    <Compile Include="Lists\clsListadosDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Lists\" />
     <Folder Include="Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\12-CRUD-Personas-Entities\12-CRUD-Personas-Entities.csproj">
+      <Project>{5ce91536-d6c1-419c-960d-a68bbee3c234}</Project>
+      <Name>12-CRUD-Personas-Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

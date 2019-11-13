@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _12_CRUD_Personas_Entities
 {
-    class clsPersona
+    public class clsPersona
     {
         public int idPersona { get; set; }
         public String nombre { get; set; }
@@ -14,7 +14,6 @@ namespace _12_CRUD_Personas_Entities
         public DateTime fechaNacimiento { get; set; }
         public string direccion { get; set; }
         public string telefono { get; set; }
-
         public byte[] foto { get; set; }
         public int idDepartamento { get; set; }
         //constructor por defecto

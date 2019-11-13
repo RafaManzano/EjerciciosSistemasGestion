@@ -132,6 +132,10 @@
       <Project>{c8d40a00-60b4-44a3-8622-39272e3ae61b}</Project>
       <Name>12-CRUD-Personas-BL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\12-CRUD-Personas-Entities\12-CRUD-Personas-Entities.csproj">
+      <Project>{5ce91536-d6c1-419c-960d-a68bbee3c234}</Project>
+      <Name>12-CRUD-Personas-Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

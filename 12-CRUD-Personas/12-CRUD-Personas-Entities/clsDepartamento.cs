@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _12_CRUD_Personas_Entities
 {
-    class clsDepartamento
+    public class clsDepartamento
     {
         public String nombre { get; set; }
         public int id { get; set; }
