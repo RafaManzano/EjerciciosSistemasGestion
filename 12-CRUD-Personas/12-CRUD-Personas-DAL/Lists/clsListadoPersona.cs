@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _12_CRUD_Personas_DAL.Lists
 {
-    class clsListadoPersona
+    public class clsListadoPersona
     {
         /*
         public List<clsPersona> listadoPersonas()

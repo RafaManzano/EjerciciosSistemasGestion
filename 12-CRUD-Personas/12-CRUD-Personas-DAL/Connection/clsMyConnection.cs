@@ -22,7 +22,7 @@ namespace _12_CRUD_Personas_DAL.Connection
     //   Sub closeConnection(ByRef connection As SqlConnection)
     //       Este método cierra una conexión con la base de datos. Lanza excepciones de tipo: SqlExcepion, InvalidOperationException y Exception.
     //
-    class clsMyConnection
+    public class clsMyConnection
     {
         //Atributos
         public String server { get; set; }

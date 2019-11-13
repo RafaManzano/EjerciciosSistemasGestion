@@ -42,11 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connection\clsMyConnection.cs" />
-<<<<<<< HEAD
     <Compile Include="Lists\clsListadosDAL.cs" />
-=======
+
     <Compile Include="Lists\clsListadoPersona.cs" />
->>>>>>> 71bc059c7a4d0c4d30c501a4e3a4577ede52ad0d
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

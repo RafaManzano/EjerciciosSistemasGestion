@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,6 +9,7 @@ namespace _12_CRUD_Personas_Entities
 {
     public class clsPersona
     {
+        [Key]
         public int idPersona { get; set; }
         public String nombre { get; set; }
         public String apellidos { get; set; }
