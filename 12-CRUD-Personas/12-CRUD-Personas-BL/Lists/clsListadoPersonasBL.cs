@@ -66,5 +66,11 @@ namespace _12_CRUD_Personas_BL.Lists
             clsManejadoras crud = new clsManejadoras();
             crud.borrarPersona(id);
         }
+
+        public void crearPersona(clsPersona persona)
+        {
+            clsManejadoras crud = new clsManejadoras();
+            crud.crearPersona(persona);
+        }
     }
 }
