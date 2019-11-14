@@ -1,4 +1,4 @@
-﻿@model IEnumerable<_12_CRUD_Personas_Entities.clsPersona>
+﻿@model IEnumerable<_12_CRUD_Personas_UI.Models.clsPersonasConNombreDpto>
 
 @{
     ViewBag.Title = "Index";
@@ -30,7 +30,7 @@
             @Html.DisplayNameFor(model => model.foto)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.idDepartamento)
+            @Html.DisplayNameFor(model => model.NombreDpto)
         </th>
         <th></th>
     </tr>
@@ -56,7 +56,7 @@
             @Html.DisplayFor(modelItem => item.foto)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.idDepartamento)
+            @Html.DisplayFor(modelItem => item.NombreDpto)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.idPersona }) |

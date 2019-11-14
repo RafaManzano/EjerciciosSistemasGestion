@@ -112,7 +112,7 @@ namespace _12_CRUD_Personas_DAL.Lists
             SqlDataReader miLector;
             try
             {
-                miComando.CommandText = "SELECT * FROM dbo.PD_Personas WHERE = " + id;
+                miComando.CommandText = "SELECT * FROM dbo.PD_Personas WHERE idPersona = " + id;
                 miComando.Connection = conn;
                 miLector = miComando.ExecuteReader();
                 //Si hay lineas en el lector
@@ -155,7 +155,7 @@ namespace _12_CRUD_Personas_DAL.Lists
             SqlDataReader miLector;
             try
             {
-                miComando.CommandText = "SELECT * FROM dbo.PD_Departamentos WHERE = " + id;
+                miComando.CommandText = "SELECT * FROM dbo.PD_Departamentos WHERE IDDepartamento  = " + id;
                 miComando.Connection = conn;
                 miLector = miComando.ExecuteReader();
                 //Si hay lineas en el lector
