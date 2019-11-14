@@ -10,7 +10,11 @@ namespace _12_CRUD_Personas_Entities
     {
         public String nombre { get; set; }
         public int id { get; set; }
+        
+        public clsDepartamento()
+        {
 
+        }
         public clsDepartamento(String nombre, int id)
         {
             this.nombre = nombre;

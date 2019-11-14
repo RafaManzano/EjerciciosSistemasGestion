@@ -10,6 +10,10 @@ namespace _12_CRUD_Personas_BL.Lists
 {
     public class clsListadoPersonasBL
     {
+        /// <summary>
+        /// Recoge de la capa DAL el listado y lo pasa a la CAPA UI
+        /// </summary>
+        /// <returns>El listado de personas List<clsPersona></returns>
         public List<clsPersona> listadoPersonas()
         {
             clsListadosDAL listBBDD = new clsListadosDAL();
@@ -17,5 +21,17 @@ namespace _12_CRUD_Personas_BL.Lists
             listado = listBBDD.listadoPersona();
             return listado;
         }
-}
+
+        /// <summary>
+        /// Recoge de la capa DAL el listado y lo pasa a la CAPA UI
+        /// </summary>
+        /// <returns>El listado de departamentos List<clsDepartamento></returns>
+        public List<clsDepartamento> listadoDepartamentos()
+        {
+            clsListadosDAL listBBDD = new clsListadosDAL();
+            List<clsDepartamento> listado = new List<clsDepartamento>();
+            listado = listBBDD.listadoDpto();
+            return listado;
+        }
+    }
 }

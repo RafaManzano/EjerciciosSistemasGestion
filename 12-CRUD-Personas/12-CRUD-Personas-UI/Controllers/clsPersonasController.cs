@@ -1,20 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using _12_CRUD_Personas_BL.Lists;
 using _12_CRUD_Personas_Entities;
-using _12_CRUD_Personas_UI.Models;
 
 namespace _12_CRUD_Personas_UI
 {
     public class clsPersonasController : Controller
     {
-        private _12_CRUD_Personas_UIContext db = new _12_CRUD_Personas_UIContext();
+       
 
         // GET: clsPersonas
         public ActionResult Index()
@@ -22,7 +20,7 @@ namespace _12_CRUD_Personas_UI
             clsListadoPersonasBL list = new clsListadoPersonasBL();
             return View(list.listadoPersonas());
         }
-
+/*
         // GET: clsPersonas/Details/5
         public ActionResult Details(int? id)
         {
@@ -53,8 +51,8 @@ namespace _12_CRUD_Personas_UI
         {
             if (ModelState.IsValid)
             {
-                db.clsPersonas.Add(clsPersona);
-                db.SaveChanges();
+                //db.clsPersonas.Add(clsPersona);
+                //db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
@@ -68,7 +66,7 @@ namespace _12_CRUD_Personas_UI
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            clsPersona clsPersona = db.clsPersonas.Find(id);
+            //clsPersona clsPersona = db.clsPersonas.Find(id);
             if (clsPersona == null)
             {
                 return HttpNotFound();
@@ -85,8 +83,8 @@ namespace _12_CRUD_Personas_UI
         {
             if (ModelState.IsValid)
             {
-                db.Entry(clsPersona).State = EntityState.Modified;
-                db.SaveChanges();
+                //db.Entry(clsPersona).State = EntityState.Modified;
+               // db.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(clsPersona);
@@ -99,7 +97,7 @@ namespace _12_CRUD_Personas_UI
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            clsPersona clsPersona = db.clsPersonas.Find(id);
+           // clsPersona clsPersona = db.clsPersonas.Find(id);
             if (clsPersona == null)
             {
                 return HttpNotFound();
@@ -112,9 +110,9 @@ namespace _12_CRUD_Personas_UI
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            clsPersona clsPersona = db.clsPersonas.Find(id);
-            db.clsPersonas.Remove(clsPersona);
-            db.SaveChanges();
+           // clsPersona clsPersona = db.clsPersonas.Find(id);
+           //db.clsPersonas.Remove(clsPersona);
+            //db.SaveChanges();
             return RedirectToAction("Index");
         }
 
@@ -122,9 +120,11 @@ namespace _12_CRUD_Personas_UI
         {
             if (disposing)
             {
-                db.Dispose();
+                //db.Dispose();
             }
             base.Dispose(disposing);
         }
+        */
     }
+    
 }
