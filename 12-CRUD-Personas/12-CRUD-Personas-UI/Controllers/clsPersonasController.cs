@@ -85,38 +85,42 @@ namespace _12_CRUD_Personas_UI
 
                     return View(clsPersona);
                 }
-        /*
+       
                        // GET: clsPersonas/Edit/5
-                       public ActionResult Edit(int? id)
-                       {
-                           if (id == null)
-                           {
-                               return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-                           }
-                           //clsPersona clsPersona = db.clsPersonas.Find(id);
-                           if (clsPersona == null)
-                           {
-                               return HttpNotFound();
-                           }
-                           return View(clsPersona);
-                       }
+            public ActionResult Edit(int id)
+            {
+                clsListadoPersonasBL capaBL = new clsListadoPersonasBL();
+                clsPersonaConListadoDpto personaListadoDpto = new clsPersonaConListadoDpto();
+                clsPersona pers = capaBL.personaPorID(id);
+                personaListadoDpto.ListadoDepartamentos = capaBL.listadoDepartamentos();
+                personaListadoDpto.nombre = pers.nombre;
+                personaListadoDpto.apellidos = pers.apellidos;
+                personaListadoDpto.telefono = pers.telefono;
+                personaListadoDpto.fechaNacimiento = pers.fechaNacimiento;
+                personaListadoDpto.idPersona = pers.idPersona;
+                personaListadoDpto.foto = pers.foto;
+            return View(personaListadoDpto);
+            
+            }
+ 
+        // POST: clsPersonas/Edit/5
+        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
+        // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "idPersona,nombre,apellidos,fechaNacimiento,direccion,telefono,foto,idDepartamento")] clsPersona clsPersona)
+        {
+            if (ModelState.IsValid)
+            {
+                clsListadoPersonasBL capaBL = new clsListadoPersonasBL();
+                capaBL.actualizarPersona(clsPersona);
+                //db.clsPersonas.Add(clsPersona);
+                //db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(clsPersona);
+        }
 
-                       // POST: clsPersonas/Edit/5
-                       // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
-                       // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
-                       [HttpPost]
-                       [ValidateAntiForgeryToken]
-                       public ActionResult Edit([Bind(Include = "idPersona,nombre,apellidos,fechaNacimiento,direccion,telefono,foto,idDepartamento")] clsPersona clsPersona)
-                       {
-                           if (ModelState.IsValid)
-                           {
-                               //db.Entry(clsPersona).State = EntityState.Modified;
-                              // db.SaveChanges();
-                               return RedirectToAction("Index");
-                           }
-                           return View(clsPersona);
-                       }
-       */
         // GET: clsPersonas/Delete/5
         public ActionResult Delete(int id)
                 {
