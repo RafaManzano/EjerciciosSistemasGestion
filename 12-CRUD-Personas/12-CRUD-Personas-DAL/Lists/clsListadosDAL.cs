@@ -21,9 +21,9 @@ namespace _12_CRUD_Personas_DAL.Lists
             clsMyConnection connection = new clsMyConnection();
             SqlConnection conn = connection.getConnection();
             SqlCommand miComando = new SqlCommand();
-            SqlDataReader miLector;
+            SqlDataReader miLector = null;
             clsPersona oPersona;
-            Byte[] bytes = new Byte[20];
+            //Byte[] bytes = new Byte[20];
             try
             {
                 miComando.CommandText = "SELECT * FROM dbo.PD_Personas";
@@ -36,22 +36,36 @@ namespace _12_CRUD_Personas_DAL.Lists
                     {
                         oPersona = new clsPersona();
                         oPersona.idPersona = (int)miLector["IdPersona"];
-                        oPersona.nombre = (string)miLector["NombrePersona"];
-                        oPersona.apellidos = (string)miLector["ApellidosPersona"];
-                        //oPersona.fechaNacimiento = (DateTime)miLector["FechaNacimientoPersona"];
-                        //oPersona.direccion = (string)miLector["direccion"];
-                        oPersona.telefono = (oPersona.telefono != null) ? (string)miLector["TelefonoPersona"] : "000000000" ;
-                        oPersona.foto = (oPersona.foto != null) ? (byte[])miLector["FotoPersona"]: bytes;
+                        oPersona.nombre = (miLector["NombrePersona"] is DBNull) ? "NULL" : (string)miLector["NombrePersona"];
+                        oPersona.apellidos = (miLector["ApellidosPersona"] is DBNull) ? "NULL" : (string)miLector["ApellidosPersona"];
+                        oPersona.fechaNacimiento = (miLector["FechaNacimientoPersona"] is DBNull) ? new DateTime() : (DateTime)miLector["FechaNacimientoPersona"];
+                        //oPersona.Direccion = ((string)miLector["direccion"] != null) ? (string)miLector["direccion"] : null;
+                        oPersona.telefono = (miLector["TelefonoPersona"] is DBNull) ? "NULL" : (string)miLector["TelefonoPersona"];
+                        oPersona.foto = (miLector["FotoPersona"] is DBNull) ? new byte[1] : (Byte[])miLector["FotoPersona"];
                         oPersona.idDepartamento = (int)miLector["IDDepartamento"];
                         listado.Add(oPersona);
                     }
                 }
-                miLector.Close();
-                connection.closeConnection(ref conn);
+
+                //miLector.Close();
+                //connection.closeConnection(ref conn);  
             }
-            catch (SqlException exSql)
+            catch (Exception exSql)
             {
                 throw exSql;
+            }
+
+            finally
+            {
+                if (miLector != null)
+                {
+                    miLector.Close();
+                }
+
+                if (conn != null)
+                {
+                    connection.closeConnection(ref conn);
+                }
             }
 
             return listado;
@@ -104,7 +118,6 @@ namespace _12_CRUD_Personas_DAL.Lists
         /// <returns>Devolvemos la persona que tiene esa ID</returns>
         public clsPersona personaporID(int id)
         {
-            Byte[] bytes = new Byte[20];
             clsPersona oPersona = new clsPersona();
             clsMyConnection connection = new clsMyConnection();
             SqlConnection conn = connection.getConnection();
@@ -121,12 +134,12 @@ namespace _12_CRUD_Personas_DAL.Lists
                     while (miLector.Read())
                     {
                         oPersona.idPersona = (int)miLector["IdPersona"];
-                        oPersona.nombre = (string)miLector["NombrePersona"];
-                        oPersona.apellidos = (string)miLector["ApellidosPersona"];
-                        //oPersona.fechaNacimiento = (DateTime)miLector["FechaNacimientoPersona"];
-                        //oPersona.direccion = (string)miLector["direccion"];
-                        oPersona.telefono = (oPersona.telefono != null) ? (string)miLector["TelefonoPersona"] : "000000000";
-                        oPersona.foto = (oPersona.foto != null) ? (byte[])miLector["FotoPersona"] : bytes;
+                        oPersona.nombre = (miLector["NombrePersona"] is DBNull) ? "NULL" : (string)miLector["NombrePersona"];
+                        oPersona.apellidos = (miLector["ApellidosPersona"] is DBNull) ? "NULL" : (string)miLector["ApellidosPersona"];
+                        oPersona.fechaNacimiento = (miLector["FechaNacimientoPersona"] is DBNull) ? new DateTime() : (DateTime)miLector["FechaNacimientoPersona"];
+                        //oPersona.Direccion = ((string)miLector["direccion"] != null) ? (string)miLector["direccion"] : null;
+                        oPersona.telefono = (miLector["TelefonoPersona"] is DBNull) ? "NULL" : (string)miLector["TelefonoPersona"];
+                        oPersona.foto = (miLector["FotoPersona"] is DBNull) ? new byte[1] : (Byte[])miLector["FotoPersona"];
                         oPersona.idDepartamento = (int)miLector["IDDepartamento"];
                     }
                 }
