@@ -11,7 +11,7 @@ using _12_CRUD_Personas_UI.Models;
 
 namespace _12_CRUD_Personas_UI
 {
-    public class clsPersonasController : Controller
+    public class PersonasController : Controller
     {
        
 

@@ -53,7 +53,8 @@
             @Html.DisplayFor(modelItem => item.telefono)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.foto)
+            @*@Html.DisplayFor(modelItem => item.foto)*@
+            <img src="data:image;base64,@System.Convert.ToBase64String(item.foto)" width="80" height="80" />
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.NombreDpto)

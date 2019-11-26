@@ -135,7 +135,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\API\PersonaController.cs" />
-    <Compile Include="Controllers\clsPersonasController.cs" />
+    <Compile Include="Controllers\PersonasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -148,11 +148,11 @@
     <None Include="packages.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\clsPersonas\Create.cshtml" />
-    <Content Include="Views\clsPersonas\Delete.cshtml" />
-    <Content Include="Views\clsPersonas\Details.cshtml" />
-    <Content Include="Views\clsPersonas\Edit.cshtml" />
-    <Content Include="Views\clsPersonas\Index.cshtml" />
+    <Content Include="Views\Personas\Create.cshtml" />
+    <Content Include="Views\Personas\Delete.cshtml" />
+    <Content Include="Views\Personas\Details.cshtml" />
+    <Content Include="Views\Personas\Edit.cshtml" />
+    <Content Include="Views\Personas\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
