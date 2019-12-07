@@ -65,30 +65,36 @@ namespace _12_CRUD_Personas_BL.Lists
         /// Recoge de la capa DAL el listado y lo pasa a la CAPA UI
         /// </summary>
         /// <param name="id">El id de la persona para eliminarla</param>
-        public void borrarPersona(int id)
+        public int borrarPersona(int id)
         {
+            int resultado = 0;
             clsManejadoras crud = new clsManejadoras();
-            crud.borrarPersona(id);
+            resultado = crud.borrarPersona(id);
+            return resultado;
         }
 
         /// <summary>
         /// Recoge de la capa DAL el listado y lo pasa a la CAPA UI
         /// </summary>
         /// <param name="persona">La persona nueva a introducir en la BBDD</param>
-        public void crearPersona(clsPersona persona)
+        public int crearPersona(clsPersona persona)
         {
+            int resultado = 0;
             clsManejadoras crud = new clsManejadoras();
-            crud.crearPersona(persona);
+            resultado = crud.crearPersona(persona);
+            return resultado;
         }
 
         /// <summary>
         /// Recoge de la capa DAL el listado y lo pasa a la CAPA UI
         /// </summary>
         /// <param name="persona">La persona modificada para actualizar en la BBDD</param>
-        public void actualizarPersona(clsPersona persona)
+        public int actualizarPersona(clsPersona persona)
         {
+            int resultado = 0;
             clsManejadoras crud = new clsManejadoras();
-            crud.actualizarPersona(persona);
+            resultado = crud.actualizarPersona(persona);
+            return resultado;
         }
     }
 }

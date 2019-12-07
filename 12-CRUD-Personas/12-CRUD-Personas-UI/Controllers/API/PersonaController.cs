@@ -25,21 +25,60 @@ namespace _12_CRUD_Personas_UI.Controllers.API
         }
 
         // POST: api/Persona
-        public void Post([FromBody]clsPersona value)
+        public HttpResponseMessage Post([FromBody]clsPersona value)
         {
-            capaBL.crearPersona(value);
+            HttpResponseMessage http = new HttpResponseMessage();
+            int resultado = 0;
+            resultado = capaBL.crearPersona(value);
+
+            if (resultado != 0)
+            {
+                http = new HttpResponseMessage(HttpStatusCode.OK) { Content = new StringContent("Todo OK Jose Luis") };
+            }
+            else
+            {
+                http = new HttpResponseMessage(HttpStatusCode.BadRequest) { Content = new StringContent("Hay algo que no has escrito bien, lo siento por no darte mas informacion") };
+            }
+
+            return http;
         }
 
         // PUT: api/Persona/5
-        public void Put(int id, [FromBody]clsPersona value)
+        public HttpResponseMessage Put([FromBody]clsPersona value)
         {
-            capaBL.actualizarPersona(value);
+            HttpResponseMessage http = new HttpResponseMessage();
+            int resultado = 0;
+            resultado = capaBL.actualizarPersona(value);
+
+            if (resultado != 0)
+            {
+                http = new HttpResponseMessage(HttpStatusCode.OK) { Content = new StringContent("Todo OK Jose Luis") };
+            }
+            else
+            {
+                http = new HttpResponseMessage(HttpStatusCode.NotFound) { Content = new StringContent("No se encuentra en la BBDD") };
+            }
+
+            return http;
         }
 
         // DELETE: api/Persona/5
-        public void Delete(int id)
+        public HttpResponseMessage Delete(int id)
         {
-            capaBL.borrarPersona(id);
+            HttpResponseMessage http = new HttpResponseMessage();
+            int resultado = 0;
+            resultado = capaBL.borrarPersona(id);
+
+            if(resultado != 0)
+            {
+                http = new HttpResponseMessage(HttpStatusCode.OK) { Content = new StringContent("Todo OK Jose Luis") };
+            }
+            else
+            {
+                http = new HttpResponseMessage(HttpStatusCode.NotFound) { Content = new StringContent("No se encuentra en la BBDD") };
+            }
+
+            return http;
         }
     }
 }

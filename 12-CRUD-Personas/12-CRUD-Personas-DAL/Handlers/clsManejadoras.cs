@@ -15,7 +15,7 @@ namespace _12_CRUD_Personas_DAL.Handlers
         /// Metodo que borra una persona por su ID de la BBDD
         /// </summary>
         /// <param name="id">El ID de la persona a eliminar</param>
-        public void borrarPersona(int id)
+        public int borrarPersona(int id)
         {
             int resultado = 0;
             clsMyConnection connection = new clsMyConnection();
@@ -34,13 +34,15 @@ namespace _12_CRUD_Personas_DAL.Handlers
                 throw;
             }
 
+            return resultado;
+
         }
 
         /// <summary>
         /// Creamos la persona y la introducimos en la BBDD
         /// </summary>
         /// <param name="persona">Este es el objeto que tiene que introducir en la BBDD</param>
-        public void crearPersona(clsPersona persona)
+        public int crearPersona(clsPersona persona)
         {
             int resultado = 0;
             clsMyConnection connection = new clsMyConnection();
@@ -64,15 +66,19 @@ namespace _12_CRUD_Personas_DAL.Handlers
                 throw;
             }
 
+            return resultado;
+
         }
 
         /// <summary>
         /// Actualizamos la persona de la BBDD
         /// </summary>
         /// <param name="persona">Este es el objeto que tiene que actualizar en la BBDD</param>
-        public void actualizarPersona(clsPersona persona)
+        public int actualizarPersona(clsPersona persona)
         {
             int resultado = 0;
+            try
+            {
             clsMyConnection connection = new clsMyConnection();
             SqlConnection conn = connection.getConnection();
             SqlCommand miComando = new SqlCommand();
@@ -84,8 +90,7 @@ namespace _12_CRUD_Personas_DAL.Handlers
             miComando.Parameters.Add("@telefono", System.Data.SqlDbType.VarChar).Value = persona.telefono;
             miComando.Parameters.Add("@foto", System.Data.SqlDbType.VarBinary).Value = persona.foto = new byte[10];
 
-            try
-            {
+            
                 miComando.CommandText = "UPDATE dbo.PD_Personas SET NombrePersona = @nombre, ApellidosPersona = @apellidos, IDDepartamento = @idDpto, FechaNacimientoPersona =  @fechaNacimiento, TelefonoPersona = @telefono, FotoPersona = @foto WHERE IdPersona = @id";
                 miComando.Connection = conn;
                 resultado = miComando.ExecuteNonQuery();
@@ -94,6 +99,8 @@ namespace _12_CRUD_Personas_DAL.Handlers
             {
                 throw;
             }
+
+            return resultado;
 
         }
 
