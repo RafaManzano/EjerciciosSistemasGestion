@@ -22,18 +22,20 @@ namespace _14_PersonajesLoL_DAL.Connection
 
             //Mi conexion
             //TODO MODIFICAR PARA MI CONEXION
-            /*
+            
             this.server = "rafamanzano.database.windows.net";
             this.dataBase = "Personas";
             this.user = "rmanzano";
             this.pass = "MiTesoro.";
-            */
+            
 
             //BBDD modo local
+            /*
             this.server = "DESKTOP-VEDOCS8";
             this.dataBase = "Juego";
             this.user = "prueba";
             this.pass = "123";
+            */
         }
         //Con parámetros por si quisiera cambiar las conexiones
         public clsMyConnection(String server, String database, String user, String pass)

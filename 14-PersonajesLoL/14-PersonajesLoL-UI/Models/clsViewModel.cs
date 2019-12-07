@@ -14,11 +14,13 @@ namespace _14_PersonajesLoL_UI.Models
         private List<clsCategoria> categorias;
 
         private clsListadosPersonajesBL plist = new clsListadosPersonajesBL();
+        private clsListadosCategoriasBL clist = new clsListadosCategoriasBL();
 
         public clsViewModel()
         {
             personajes = plist.listadoPersonajes();
             personaje = new clsPersonaje();
+            categorias = clist.listadoCategorias();
         }
 
         public List<clsPersonaje> Personajes

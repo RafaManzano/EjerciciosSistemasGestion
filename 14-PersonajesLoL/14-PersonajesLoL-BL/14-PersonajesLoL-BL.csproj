@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Handlers\clsManejadoraBL.cs" />
+    <Compile Include="Lists\clsListadosCategoriasBL.cs" />
     <Compile Include="Lists\clsListadosPersonajesBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

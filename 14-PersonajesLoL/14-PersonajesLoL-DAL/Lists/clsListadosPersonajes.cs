@@ -73,5 +73,72 @@ namespace _14_PersonajesLoL_DAL.Lists
             return listado;
 
         }
+
+        /// <summary>
+        /// Se conecta a la BBDD y devuelve el personaje que tenga la ID introducida por parametro
+        /// </summary>
+        /// <param name="id">La id del personaje que deseamos encontrar</param>
+        /// <returns>Devuelve el personaje que tenga la id introducida por parametro</returns>
+        public clsPersonaje personajePorID(int id)
+        {
+            clsPersonaje personaje = new clsPersonaje();
+            clsMyConnection connection = new clsMyConnection();
+            SqlConnection conn = connection.getConnection();
+            SqlCommand miComando = new SqlCommand();
+            SqlDataReader miLector = null;
+            miComando.Parameters.Add("@id", System.Data.SqlDbType.Int).Value = id;
+            clsPersonaje oPersonaje = new clsPersonaje();
+            //Byte[] bytes = new Byte[20];
+            try
+            {
+
+                miComando.CommandText = "SELECT * FROM Personaje WHERE ID = @id";
+                miComando.Connection = conn;
+                miLector = miComando.ExecuteReader();
+                //Si hay lineas en el lector
+                if (miLector.HasRows)
+                {
+                    while (miLector.Read())
+                    {
+                        //oPersonaje = new clsPersonaje();
+                        oPersonaje.ID = (int)miLector["ID"];
+                        oPersonaje.Alias = (miLector["Alias"] is DBNull) ? "NULL" : (string)miLector["Alias"];
+                        oPersonaje.Vida = (miLector["Vida"] is DBNull) ? 0 : (double)miLector["Vida"];
+                        oPersonaje.Regeneracion = (miLector["Regeneracion"] is DBNull) ? 0 : (double)miLector["Regeneracion"];
+                        oPersonaje.Danno = (miLector["Danno"] is DBNull) ? 0 : (double)miLector["Danno"];
+                        oPersonaje.Armadura = (miLector["Armadura"] is DBNull) ? 0 : (double)miLector["Armadura"];
+                        oPersonaje.VelocidadAtaque = (miLector["VelocidadAtaque"] is DBNull) ? 0 : (double)miLector["VelocidadAtaque"];
+                        oPersonaje.Resistencia = (miLector["Resistencia"] is DBNull) ? 0 : (double)miLector["Resistencia"];
+                        oPersonaje.VelocidadMovimiento = (miLector["VelocidadMovimiento"] is DBNull) ? 0 : (double)miLector["VelocidadMovimiento"];
+                        oPersonaje.IDCategoria = (int)miLector["IDCategoria"];
+                    }
+                }
+
+                //miLector.Close();
+                //connection.closeConnection(ref conn);  
+            }
+            catch (Exception exSql)
+            {
+                throw exSql;
+            }
+
+            finally
+            {
+                if (miLector != null)
+                {
+                    miLector.Close();
+                }
+
+                if (conn != null)
+                {
+                    connection.closeConnection(ref conn);
+                }
+            }
+
+            return oPersonaje;
+
+        }
+
+
     }
 }

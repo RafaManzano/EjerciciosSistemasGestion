@@ -20,5 +20,12 @@ namespace _14_PersonajesLoL_BL.Lists
             clsListadosPersonajes list = new clsListadosPersonajes();
             return list.listadoPersonajes();
         }
+
+
+        public clsPersonaje personajePorID(int id)
+        {
+            clsListadosPersonajes list = new clsListadosPersonajes();
+            return list.personajePorID(id);
+        }
     }
 }

@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Connection\clsMyConnection.cs" />
+    <Compile Include="Handlers\clsManejadoraDAL.cs" />
+    <Compile Include="Lists\clsListadosCategoria.cs" />
     <Compile Include="Lists\clsListadosPersonajes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
