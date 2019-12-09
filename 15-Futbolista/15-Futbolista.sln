@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.852
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "15-Futbolista-UI", "15-Futbolista-UI\15-Futbolista-UI.csproj", "{186155E2-6072-465E-9C07-DA814E4226D7}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "15-Futbolista-DAL", "15-Futbolista-DAL\15-Futbolista-DAL.csproj", "{8AB0CFA2-1BAA-4DE0-BA12-A56BBFD29013}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "15-Futbolista-BL", "15-Futbolista-BL\15-Futbolista-BL.csproj", "{382EEE1E-4C7F-499A-AE6C-5CBDF3B7C338}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "15-Futbolista-ENTITIES", "15-Futbolista-ENTITIES\15-Futbolista-ENTITIES.csproj", "{6A1E88F1-CFEB-4893-8E45-086B842E96F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "15-Futbolista-UI", "15-Futbolista-UI\15-Futbolista-UI.csproj", "{0A7FE442-DDB0-4FA9-8DA4-83823C913C65}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{186155E2-6072-465E-9C07-DA814E4226D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{186155E2-6072-465E-9C07-DA814E4226D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{186155E2-6072-465E-9C07-DA814E4226D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{186155E2-6072-465E-9C07-DA814E4226D7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8AB0CFA2-1BAA-4DE0-BA12-A56BBFD29013}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8AB0CFA2-1BAA-4DE0-BA12-A56BBFD29013}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8AB0CFA2-1BAA-4DE0-BA12-A56BBFD29013}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,6 +29,10 @@ Global
 		{6A1E88F1-CFEB-4893-8E45-086B842E96F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A1E88F1-CFEB-4893-8E45-086B842E96F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A1E88F1-CFEB-4893-8E45-086B842E96F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A7FE442-DDB0-4FA9-8DA4-83823C913C65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A7FE442-DDB0-4FA9-8DA4-83823C913C65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A7FE442-DDB0-4FA9-8DA4-83823C913C65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A7FE442-DDB0-4FA9-8DA4-83823C913C65}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

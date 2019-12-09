@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{382EEE1E-4C7F-499A-AE6C-5CBDF3B7C338}</ProjectGuid>
+    <ProjectGuid>{7FB024A8-79AC-411A-A47D-586A0E64F2A5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_15_Futbolista_BL</RootNamespace>
-    <AssemblyName>15-Futbolista-BL</AssemblyName>
+    <RootNamespace>_15_FutbolistaNuevo_ENTITIES</RootNamespace>
+    <AssemblyName>15-FutbolistaNuevo-ENTITIES</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -42,19 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
-    <Compile Include="Lists\clsListadoEquiposBL.cs" />
-    <Compile Include="Lists\clsListadoFutbolistasBL.cs" />
+    <Compile Include="clsEquipo.cs" />
+    <Compile Include="clsJugador.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\15-Futbolista-DAL\15-Futbolista-DAL.csproj">
-      <Project>{8ab0cfa2-1baa-4de0-ba12-a56bbfd29013}</Project>
-      <Name>15-Futbolista-DAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\15-Futbolista-ENTITIES\15-Futbolista-ENTITIES.csproj">
-      <Project>{6a1e88f1-cfeb-4893-8e45-086b842e96f3}</Project>
-      <Name>15-Futbolista-ENTITIES</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

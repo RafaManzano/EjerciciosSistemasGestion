@@ -42,7 +42,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Connection\clsMyConnection.cs" />
+    <Compile Include="Lists\clsListadoEquiposDAL.cs" />
+    <Compile Include="Lists\clsListadoFutbolistasDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\15-Futbolista-ENTITIES\15-Futbolista-ENTITIES.csproj">
+      <Project>{6a1e88f1-cfeb-4893-8e45-086b842e96f3}</Project>
+      <Name>15-Futbolista-ENTITIES</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Handlers\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

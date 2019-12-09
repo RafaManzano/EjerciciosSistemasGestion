@@ -1,0 +1,55 @@
+﻿@model _15_FutbolistaNuevo_UI.Models.clsViewModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal">
+        <h4>Equipo</h4>
+        @Html.DropDownListFor(m => m.IDEquipo, new SelectList(Model.Equipos, "ID", "Nombre"))
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input name="boton" type="submit" value="Elegir" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.JugadorSeleecionado.Nombre)
+            @Html.DisplayNameFor(model => model.JugadorSeleecionado.Apellidos)
+            @Html.DisplayNameFor(model => model.JugadorSeleecionado.Alias)
+            @Html.DisplayNameFor(model => model.JugadorSeleecionado.Posicion)
+            @Html.DisplayNameFor(model => model.JugadorSeleecionado.Dorsal)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.Jugadores)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+                @Html.DisplayFor(modelItem => item.Apellidos)
+                @Html.DisplayFor(modelItem => item.Alias)
+                @Html.DisplayFor(modelItem => item.Posicion)
+                @Html.DisplayFor(modelItem => item.Dorsal)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+
+</table>
