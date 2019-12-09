@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Connection\clsMyConnection.cs" />
+    <Compile Include="Handlers\clsManejadoraDAL.cs" />
     <Compile Include="Lists\clsListadoEquiposDAL.cs" />
     <Compile Include="Lists\clsListadoFutbolistasDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -53,8 +54,6 @@
       <Name>15-FutbolistaNuevo-ENTITIES</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Handlers\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

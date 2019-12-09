@@ -29,8 +29,16 @@ namespace _15_FutbolistaNuevo_DAL.Connection
             this.pass = "MiTesoro.";
             */
 
-            //BBDD modo local
+            //BBDD modo local PC Mesa
+            /*
             this.server = "DESKTOP-VEDOCS8";
+            this.dataBase = "Futbolista";
+            this.user = "prueba";
+            this.pass = "123";
+            */
+
+            //BBDD modo local PC Portatil
+            this.server = "DESKTOP-5KU3KG2";
             this.dataBase = "Futbolista";
             this.user = "prueba";
             this.pass = "123";

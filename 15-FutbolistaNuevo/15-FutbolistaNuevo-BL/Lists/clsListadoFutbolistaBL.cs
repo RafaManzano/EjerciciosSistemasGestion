@@ -19,5 +19,11 @@ namespace _15_FutbolistaNuevo_BL.Lists
             clsListadoFutbolistasDAL list = new clsListadoFutbolistasDAL();
             return list.listadoJugadoresPorEquipo(idEquipo);
         }
+
+        public clsJugador jugadorPorID(int id)
+        {
+            clsListadoFutbolistasDAL list = new clsListadoFutbolistasDAL();
+            return list.jugadorPorID(id);
+        }
     }
 }

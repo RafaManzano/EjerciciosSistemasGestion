@@ -72,5 +72,65 @@ namespace _15_FutbolistaNuevo_DAL.Lists
             return listado;
 
         }
+
+        /// <summary>
+        /// El jugador con el id introducido desde parametro
+        /// </summary>
+        /// <param name="id">El id del Jugador que se desea</param>
+        /// <returns>Devuelve el jugador con ese ID</returns>
+        public clsJugador jugadorPorID(int id)
+        {
+            List<clsJugador> listado = new List<clsJugador>();
+            clsMyConnection connection = new clsMyConnection();
+            SqlConnection conn = connection.getConnection();
+            SqlCommand miComando = new SqlCommand();
+            SqlDataReader miLector = null;
+            clsJugador oJugador = new clsJugador(); 
+            //Byte[] bytes = new Byte[20];
+            try
+            {
+                miComando.Parameters.Add("@id", System.Data.SqlDbType.Int).Value = id;
+                miComando.CommandText = "SELECT * FROM Jugadores WHERE ID = @id";
+                miComando.Connection = conn;
+                miLector = miComando.ExecuteReader();
+                //Si hay lineas en el lector
+                if (miLector.HasRows)
+                {
+                    while (miLector.Read())
+                    {
+                        oJugador.ID = (int)miLector["ID"];
+                        oJugador.Nombre = (miLector["Nombre"] is DBNull) ? "NULL" : (string)miLector["Nombre"];
+                        oJugador.Apellidos = (miLector["Apellidos"] is DBNull) ? "NULL" : (string)miLector["Apellidos"];
+                        oJugador.Dorsal = (miLector["Dorsal"] is DBNull) ? 0 : (int)miLector["Dorsal"];
+                        oJugador.Alias = (miLector["Alias"] is DBNull) ? "NULL" : (string)miLector["Alias"];
+                        oJugador.Posicion = (miLector["Posicion"] is DBNull) ? "NULL" : (string)miLector["Posicion"];
+                        oJugador.IDEquipo = (int)miLector["IDEquipo"];
+                    }
+                }
+
+                //miLector.Close();
+                //connection.closeConnection(ref conn);  
+            }
+            catch (Exception exSql)
+            {
+                throw exSql;
+            }
+
+            finally
+            {
+                if (miLector != null)
+                {
+                    miLector.Close();
+                }
+
+                if (conn != null)
+                {
+                    connection.closeConnection(ref conn);
+                }
+            }
+
+            return oJugador;
+
+        }
     }
 }

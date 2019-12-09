@@ -3,21 +3,13 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-
 <p>
 @using (Html.BeginForm())
 {
     <div class="form-horizontal">
         <h4>Equipo</h4>
         @Html.DropDownListFor(m => m.IDEquipo, new SelectList(Model.Equipos, "ID", "Nombre"))
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input name="boton" type="submit" value="Elegir" class="btn btn-default" />
-            </div>
-        </div>
+        <input name="boton" type="submit" value="Elegir" class="btn btn-default" />
     </div>
 }
 </p>
@@ -43,13 +35,15 @@
                 @Html.DisplayFor(modelItem => item.Alias)
                 @Html.DisplayFor(modelItem => item.Posicion)
                 @Html.DisplayFor(modelItem => item.Dorsal)
+                @Html.HiddenFor(modelItem => item.IDEquipo)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                @Html.ActionLink("Editar", "Editar", new { id = item.ID }) |
+                @Html.ActionLink("Liberar", "Liberar", new { id = item.ID }) |
+                @Html.ActionLink("Transferir", "Transferir", new { id = item.ID })
             </td>
         </tr>
     }
+    
 
 </table>
