@@ -1,0 +1,54 @@
+﻿@model _16_Empresa_UI.Models.ViewModel.clsViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @using (Html.BeginForm())
+    {
+        <div class="form-horizontal">
+            <h4>Equipo</h4>
+            @Html.DropDownListFor(model => model.IDDepartamento, new SelectList(Model.Departamentos, "ID", "Nombre"))
+            <input name="boton" type="submit" value="Elegir" class="btn btn-default" />
+        </div>
+    }
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PersonaConDptoYPuesto.DNI)
+                @Html.DisplayNameFor(model => model.PersonaConDptoYPuesto.Nombre)
+                @Html.DisplayNameFor(model => model.PersonaConDptoYPuesto.Apellidos)
+                @Html.DisplayNameFor(model => model.PersonaConDptoYPuesto.NombrePuesto)                
+                @Html.DisplayNameFor(model => model.PersonaConDptoYPuesto.NombreDpto)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.PersonasConDptoYPuesto)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DNI)
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                    @Html.DisplayFor(modelItem => item.Apellidos)
+                    @Html.DisplayFor(modelItem => item.NombrePuesto)
+                    @Html.DisplayFor(modelItem => item.NombreDpto)
+                    @Html.HiddenFor(model => item.IDPuestoTrabajo)
+                    @Html.HiddenFor(model => item.IDDepartamento)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Editar", new { dni = item.DNI }) |
+                    @Html.ActionLink("Departamento", "Departamento", new { dni = item.DNI }) |
+                    @Html.ActionLink("Eliminar", "Eliminar", new { dni = item.DNI })
+                </td>
+            </tr>
+        }
+
+
+    </table>
+</p>
+

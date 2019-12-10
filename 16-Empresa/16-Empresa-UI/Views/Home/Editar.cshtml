@@ -1,0 +1,43 @@
+﻿@model _16_Empresa_UI.Models.ViewModel.clsViewModel
+
+@{
+    ViewBag.Title = "Editar";
+}
+
+<h2>Editar</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Editar</h4>
+        @Html.HiddenFor(model => model.PersonaConDptoYPuesto.DNI)
+        @Html.HiddenFor(model => model.PersonaConDptoYPuesto.IDDepartamento)
+        <div>
+            @Html.LabelFor(model => model.PersonaConDptoYPuesto.Nombre, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.EditorFor(model => model.PersonaConDptoYPuesto.Nombre, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+
+        <div>
+            @Html.LabelFor(model => model.PersonaConDptoYPuesto.Apellidos, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.EditorFor(model => model.PersonaConDptoYPuesto.Apellidos, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+
+        <div>
+            @Html.LabelFor(model => model.PersonaConDptoYPuesto.NombrePuesto, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.DropDownListFor(m => m.PersonaConDptoYPuesto.IDPuestoTrabajo, new SelectList(Model.Puestos, "ID", "Nombre"), Model.PersonaConDptoYPuesto.IDPuestoTrabajo)
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Vuelve hacia atras", "Index")
+</div>
+
+
