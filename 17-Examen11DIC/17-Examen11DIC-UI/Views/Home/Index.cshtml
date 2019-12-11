@@ -1,0 +1,41 @@
+﻿@model _17_Examen11DIC_UI.Models.ViewModel.clsViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @using (Html.BeginForm())
+    {
+        <div class="form-horizontal">
+            <h4>Superheroes</h4>
+            @Html.DropDownListFor(model => model.IDSuperheroeSeleccionado, new SelectList(Model.Superheroes, "IDSuperheroe", "NombreSuperheroe"))
+           
+        </div>
+
+        <table class="table">
+            <tr>
+                <th>
+
+                    Descripcion de la Mision
+                </th>
+               
+            </tr>
+
+            @foreach (var item in Model.MisionesDisponibles)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DescripcionMision)
+                        <input name="idsMisionesElegidas" type="checkbox" value="@item.IDMision" />
+                    </td>
+
+                </tr>
+            }
+        </table>
+        <input name="boton" type="submit" value="Reservar" class="btn btn-default" />
+
+    }
+
