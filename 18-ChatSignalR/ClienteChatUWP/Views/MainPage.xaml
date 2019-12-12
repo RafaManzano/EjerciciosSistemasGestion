@@ -1,0 +1,37 @@
+﻿<Page
+    x:Class="ClienteChatUWP.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ClienteChatUWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:vm="using:ClienteChatUWP.ViewModel"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.DataContext>
+        <vm:clsViewModel></vm:clsViewModel>
+    </Page.DataContext>
+    <RelativePanel>
+        <TextBox Text="{Binding MiMensaje.Nombre, Mode=TwoWay}" x:Name="name" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignTopWithPanel="True" ></TextBox>
+        <ListView x:Name="lv" ItemsSource="{Binding ListaMensaje}" RelativePanel.Above="rp" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" RelativePanel.Below="name">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock>
+                        <Run Text="{Binding Nombre}"></Run>
+                        <Run Text=": "></Run>
+                        <Run Text="{Binding Mensaje}"></Run>
+                        </TextBlock>
+
+                    </StackPanel>
+                </DataTemplate>
+
+            </ListView.ItemTemplate>
+        </ListView>
+        <RelativePanel x:Name="rp" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True">
+            <TextBox Text="{Binding MiMensaje.Mensaje, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" x:Name="text" RelativePanel.AlignLeftWithPanel="True" RelativePanel.LeftOf="send" ></TextBox>
+            <Button x:Name="send" RelativePanel.AlignRightWithPanel="True" Content="Send" Command="{Binding ComandoEnviar}"></Button>
+        </RelativePanel>
+    </RelativePanel>
+</Page>
