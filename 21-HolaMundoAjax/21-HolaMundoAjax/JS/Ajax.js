@@ -3,6 +3,7 @@
 function inicializa() {
     document.getElementById("btnSaludar").addEventListener("click", saludo);
     document.getElementById("btnPedirApellido").addEventListener("click", pedirApellido);
+    document.getElementById("btnBorrar").addEventListener("click", borrarPersona);
 }
 
 function saludo() {
@@ -53,6 +54,31 @@ function pedirApellido() {
                 var apellido = arrayPersonas[0].nombre;
 
                 document.getElementById("divApellido").innerHTML = apellido;
+            }
+
+    };
+
+    miLlamada.send();
+
+}
+
+function borrarPersona() {
+    //alert("Todavia no, Boina");
+    var miLlamada = new XMLHttpRequest();
+    var numero = document.getElementById("inputNumero").value;
+    miLlamada.open("DELETE", "https://crudtoflamaapi.azurewebsites.net/api/Persona/" + numero);
+
+    //Definicion estados
+    miLlamada.onreadystatechange = function () {
+
+
+        if (miLlamada.readyState < 4) {
+            //document.getElementById("btnBorrar").innerHTML = "Cargando.......";
+
+        }
+        else
+            if (miLlamada.readyState == 4 && miLlamada.status == 204) {
+                alert("Persona eliminada con exito");
             }
 
     };
