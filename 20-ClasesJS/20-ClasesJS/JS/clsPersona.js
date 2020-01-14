@@ -1,8 +1,9 @@
-﻿export default class Persona {
+﻿class Persona {
     constructor(nombre, apellidos) {
         this.nombre = nombre;
         this.apellidos = apellidos;
     }
 
+    //TODO Metodo saludar
 
 }
