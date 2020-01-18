@@ -1,0 +1,3 @@
+De momento solo funciona el listado, parece que el telefono da null. 
+Crear completo, pero no funciona
+Por lo demas no he podido pasar informacion de un lado a otro, seguire revisando. A unas malas, el icono saldrá fuera
