@@ -62,7 +62,7 @@ function cargarPersonas(arrayDepartamentos) {
                     data += "<td id='nombreDpto'>" + nombreDpto + "</td>";
                     data += '<td> ' +
                         //'<button id="editar">Editar</button>'
-                        '<a id="editar" href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit" id="editar">&#xE254;</i></a>' + +
+                        '<button id="editar" class="material-icons" data-toggle="tooltip" title="Editar" onclick="clickarEditar()" >'+ arrayPersonas[i].idPersona +'</button>' +
                         '<a id="borrar" href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete" >&#xE872;</i></a>' +
                         '</td>';
                     data += "</tr>"
@@ -122,9 +122,9 @@ function introducirPersona() {
 
 
 function clickarEditar() {
-    var id = document.getElementById("editar").value;
-    var persona = new Object();
-    persona = buscarPersonaPorID(id);
+    var x = document.getElementById("editar");
+    //var persona = new Object();
+    persona = buscarPersonaPorID(this.id);
     document.getElementById("nombreE").innerHTML = persona.nombre;
     document.getElementById("apellidosE").innerHTML = persona.apellidos;
     document.getElementById("fechaE").innerHTML = persona.fechaNacimiento;
