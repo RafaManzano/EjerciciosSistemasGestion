@@ -70,7 +70,7 @@ function cargarPersonas(arrayDepartamentos) {
                     data += '<td> ' +
                         //'<button id="editar">Editar</button>'
                         '<i class="material-icons" data-toggle="tooltip" title="Editar" id="editar" onclick="clickarEditar(' + arrayPersonas[i].idPersona + ')">&#xE254;</i>' +
-                        '<a id="borrar" href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete" >&#xE872;</i></a>' +
+                        '<i class="material-icons" data-toggle="tooltip" title="Delete" id="eliminar" onclick="clickarEliminar(' + arrayPersonas[i].idPersona + ')" >&#xE872;</i>' +
                         '</td>';
                     data += "</tr>"
                 }
@@ -101,10 +101,10 @@ function introducirPersona() {
     persona.nombre = document.getElementById("nombreA").value;
     persona.apellidos = document.getElementById("apellidosA").value;
     persona.fechaNacimiento = document.getElementById("fechaA").value;
-    persona.direccion = document.getElementById("direccionA").value;
-    persona.telefono = document.getElementById("telefonoA").value;
-    persona.foto = document.getElementById("fotoA").value;
-    persona.idDepartamento = 1;
+    (document.getElementById("direccionA").value == "" ? "" : persona.direccion = document.getElementById("direccionA").value);
+    (document.getElementById("telefonoA").value == "" ? "" : persona.telefono = document.getElementById("telefonoA").value);
+    (document.getElementById("fotoA").value == "" ? "" : persona.foto = document.getElementById("fotoA").value);
+    persona.idDepartamento = document.getElementById("addSelect").value;
     //persona.nombreDpto = nombreDpto;
     //persona.idDepartamento = idDpto;
 
@@ -136,10 +136,10 @@ function clickarEditar(id) {
     document.getElementById("nombreE").value = persona.nombre;
     document.getElementById("apellidosE").value = persona.apellidos;
     document.getElementById("fechaE").value = persona.fechaNacimiento;
-    document.getElementById("direccionE").value = persona.direccion;
-    document.getElementById("telefonoE").value = persona.telefono;
-    document.getElementById("fotoE").value = persona.foto;
-    document.getElementById("nombreDptoE").value = persona.nombreDpto;
+    (persona.direccion == "" ? "" : document.getElementById("direccionE").value = persona.direccion);
+    (persona.telefono == "" ? "" : document.getElementById("telefonoE").value = persona.telefono);
+    (persona.foto == "" ? "" : document.getElementById("fotoE").value = persona.foto);
+    document.getElementById("editSelect").value = persona.idDepartamento;
 
     guardar.onclick = function () {
         var nuevaPersona = new Object();
@@ -150,10 +150,10 @@ function clickarEditar(id) {
         nuevaPersona.direccion = document.getElementById("direccionE").value;
         nuevaPersona.telefono = document.getElementById("telefonoE").value;
         nuevaPersona.foto = document.getElementById("fotoE").value;
-        nuevaPersona.idDepartamento = 1;
+        nuevaPersona.idDepartamento = document.getElementById("editSelect").value;
 
         var editarLlamada = new XMLHttpRequest();
-        editarLlamada.open("PUT", "https://crudtoflamaapi.azurewebsites.net/api/Persona" + id, false);
+        editarLlamada.open("PUT", "https://crudtoflamaapi.azurewebsites.net/api/Persona/" + id, false);
         editarLlamada.setRequestHeader('Content-type', 'application/json');
 
         var json = JSON.stringify(nuevaPersona);
@@ -166,7 +166,7 @@ function clickarEditar(id) {
 
             }
             else
-                if (editarLlamada.readyState == 4 && editarLlamada.status == 200) {
+                if (editarLlamada.readyState == 4 && editarLlamada.status == 204) {
 
                     alert("Persona actualizada con exito");
                     editar.style.display = "none";
@@ -225,3 +225,67 @@ function buscarPersonaPorID(id) {
 }
 
 
+function clickarEliminar(id) {
+    eliminar.style.display = "block";
+    var btnEliminar = document.getElementById("eliminarButton");
+    var eliminarLlamada = new XMLHttpRequest();
+    eliminarLlamada.open("DELETE", "https://crudtoflamaapi.azurewebsites.net/api/Persona/" + id, false);
+
+    btnEliminar.onclick = function () {
+        eliminarLlamada.onreadystatechange = function () {
+
+            if (eliminarLlamada.readyState < 4) {
+
+
+            }
+            else
+                if (eliminarLlamada.readyState == 4 && eliminarLlamada.status == 204) {
+
+
+                    alert("Persona eliminada correctamente");
+                    eliminar.style.display = "none";
+
+
+                }
+
+        };
+
+        eliminarLlamada.send();
+
+        
+    }
+}
+
+function cancelarEliminar() {
+    eliminar.style.display = "none";
+}
+/*
+TODO No funciona correctamente, al final esta puesto en el codigo HTML. 
+function listaDepartamento() {
+    var miLlamada = new XMLHttpRequest();
+    var arrayDepartamentos;
+    miLlamada.open("GET", "https://crudtoflamaapi.azurewebsites.net/api/Departamento");
+
+    //Definición del estado
+    miLlamada.onreadystatechange = function () {
+
+        if (miLlamada.readyState == 4 && miLlamada.status == 200) {
+            arrayDepartamentos = JSON.parse(miLlamada.responseText);
+            cargarListaDepartamento(arrayDepartamentos);
+        }
+    };
+
+    miLlamada.send();
+}
+
+
+function cargarListaDepartamento(dptos) {
+
+    var data = "";
+    for (var i = 0; i < dptos.length; i++) {
+        data += '<option id="' + dptos[i].id + '" value="' + dptos[i].id + '">' + dptos[i].nombre + '</option><br>';
+    }
+
+    document.getElementById("addSelect").innerText = data;
+}
+*/
