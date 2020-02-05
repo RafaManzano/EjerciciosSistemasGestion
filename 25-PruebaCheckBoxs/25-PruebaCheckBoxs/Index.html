@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+</head>
+<body>
+    <input type="checkbox" id="cbox1" value="Futbol" class="deportes"><label> Futbol</label><br />
+    <input type="checkbox" id="cbox2" value="Tenis" class="deportes"> <label>Tenis</label> <br />
+    <input type="checkbox" id="cbox3" value="Baloncesto" class="deportes"> <label>Baloncesto</label> <br />
+    <input type="checkbox" id="cbox4" value="Rugby" class="deportes"> <label>Rugby</label> <br />
+    <!--<button onclick="mostrar()">Mostrar</button>-->
+    <button onclick="myFunction()">Click me</button>
+    <div id="texto"></div>
+
+    
+
+    <p id="demo"></p>
+
+
+    <script>
+        function myFunction() {
+            //document.getElementById("demo").innerHTML = "Hello World";
+            var deportes = document.getElementsByClassName("deportes");
+            var texto = document.getElementById("texto");
+            texto.innerHTML = "";
+
+            for (var i = 0; i < deportes.length; i++) {
+                if (deportes[i].checked) {
+                    texto.innerHTML = texto.innerHTML + deportes[i].value + " , ";
+                }
+               
+            }
+        }
+    </script>
+</body>
+</html>
