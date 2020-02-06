@@ -102,11 +102,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="Pages\index.html" />
+    <Content Include="Resources\JS\JavaScript.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\MisionesController.cs" />
+    <Compile Include="Controllers\SuperheroesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -124,11 +128,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Models\" />
-    <Folder Include="Pages\" />
-    <Folder Include="Resources\CSS\" />
-    <Folder Include="Resources\JS\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ExamenJS-BL\ExamenJS-BL.csproj">

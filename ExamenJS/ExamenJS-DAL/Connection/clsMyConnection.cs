@@ -19,10 +19,20 @@ namespace ExamenJS_DAL.Connection
 
         public clsMyConnection()
         {
-            this.server = "DESKTOP-VEDOCS8";
-            this.dataBase = "PersonasyDepartamentos";
-            this.user = "admin";
-            this.pass = "admin";
+            //Mi conexion
+            //TODO MODIFICAR PARA MI CONEXION
+            this.server = "107-05\\MSSQLSERVER2017";
+            //this.server = "107-05\\MSSQLSERVER201";
+            this.dataBase = "Avengers";
+            this.user = "pr";
+            this.pass = "123";
+
+            /* TODO Fernando aqui tienes preparado la conexion, solo descomentar y probar
+             * this.server = "107-05\\MSSQLSERVER2017";
+               this.dataBase = "Avengers";
+               this.user = "prueba";
+               this.pass = "123";
+             */
 
         }
         //Con parámetros por si quisiera cambiar las conexiones
