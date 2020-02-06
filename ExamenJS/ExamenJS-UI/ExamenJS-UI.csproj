@@ -126,6 +126,19 @@
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
+    <Folder Include="Pages\" />
+    <Folder Include="Resources\CSS\" />
+    <Folder Include="Resources\JS\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ExamenJS-BL\ExamenJS-BL.csproj">
+      <Project>{e1d173d1-f1dc-44c9-955b-74128cc9cfd9}</Project>
+      <Name>ExamenJS-BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExamenJS-ENTITIES\ExamenJS-ENTITIES.csproj">
+      <Project>{5e28dc10-537a-4d98-a6b0-c2cdd005d3e6}</Project>
+      <Name>ExamenJS-ENTITIES</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
